@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>予定をSlackへ</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css">
+</head>
+<body>
+  <header class="hd"><b>💬 予定をSlackへ</b><small id="ver"></small></header>
+
+  <section id="demo" class="box" hidden>
+    <p class="note">Outlook の外で開いています。予定を手で入れて試せます（送信は本当に Slack に届きます）。</p>
+    <input type="text" id="dTitle" placeholder="件名">
+    <div class="r"><input type="datetime-local" id="dStart"><span>〜</span><input type="datetime-local" id="dEnd"></div>
+    <input type="text" id="dLoc" placeholder="場所">
+    <button class="b" id="dRun">この内容で表示</button>
+  </section>
+
+  <section id="ev" class="ev"></section>
+
+  <section class="box" id="actions" hidden>
+    <div class="warnline" id="notToday" hidden>今日の予定ではありません。ウィジェットは今日にかかる予定だけ表示します。</div>
+    <div id="sent" class="sent" hidden></div>
+    <button class="b pri" id="send">Slack に送る（追加・変更）</button>
+    <button class="b" id="cancel">取り消しを送る</button>
+    <details>
+      <summary>送る内容</summary>
+      <pre id="preview"></pre>
+    </details>
+  </section>
+
+  <details class="box" id="settings">
+    <summary>設定（ワークフローの Webhook URL）</summary>
+    <p class="note">Slack ワークフロー「Webhook から開始」の URL を貼ってください。この Outlook アカウントの設定に保存され、外部（GitHub など）には出ません。</p>
+    <input type="text" id="url" placeholder="https://hooks.slack.com/triggers/…" autocomplete="off" spellcheck="false">
+    <div class="r"><button class="b" id="save">保存</button><button class="b" id="test">テスト送信</button></div>
+  </details>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="payload.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>

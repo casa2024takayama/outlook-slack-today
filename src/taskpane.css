@@ -1,0 +1,36 @@
+:root {
+  --blue: #004BA0;
+  --blue-mid: #5B98D2;
+  --blue-light: #A1CBED;
+  --blue-pale: #DFEAF8;
+  --pink: #E4007F;
+  --text: #000000;
+  --muted: rgba(0, 0, 0, .6);
+  --bg: #FFFFFF;
+}
+* { box-sizing: border-box; font-family: "游ゴシック体", "Yu Gothic", "Hiragino Sans", sans-serif; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--text); font-size: 13px; }
+.hd { background: var(--blue); color: #FFFFFF; padding: 10px 12px; display: flex; align-items: baseline; gap: 8px; }
+.hd b { font-size: 14px; flex: 1; }
+.hd small { opacity: .75; }
+.ev { padding: 10px 12px; background: var(--blue-pale); line-height: 1.6; }
+.ev .t { font-size: 15px; font-weight: bold; word-break: break-all; }
+.ev .m { color: var(--muted); font-size: 12px; word-break: break-all; }
+.box { padding: 10px 12px; display: grid; gap: 8px; border-bottom: 1px solid var(--blue-pale); }
+.r { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+input { font-size: 13px; padding: 5px 6px; border: 1px solid var(--blue-light); border-radius: 5px; color: var(--text); background: var(--bg); width: 100%; }
+.r input { width: auto; flex: 1 1 140px; }
+button.b { border: 1px solid var(--blue); background: var(--bg); color: var(--blue); border-radius: 6px; padding: 8px 12px; font-size: 13px; cursor: pointer; }
+button.b.pri { background: var(--blue); color: #FFFFFF; font-weight: bold; }
+button.b:hover { background: var(--blue-pale); }
+button.b.pri:hover { background: var(--blue-mid); border-color: var(--blue-mid); }
+button.b:disabled { opacity: .5; cursor: default; }
+summary { cursor: pointer; color: var(--blue); font-size: 12px; }
+pre { margin: 6px 0 0; padding: 8px; background: var(--blue-pale); border-radius: 6px; font-size: 11px; white-space: pre-wrap; word-break: break-all; }
+.note { margin: 0; font-size: 11px; color: var(--muted); }
+.warnline { font-size: 12px; color: var(--pink); font-weight: bold; }
+.sent { font-size: 12px; }
+.sent .badge { background: var(--blue); color: #FFFFFF; border-radius: 999px; padding: 2px 10px; font-weight: bold; margin-right: 6px; }
+.empty { padding: 16px 12px; color: var(--muted); }
+.toast { position: fixed; left: 12px; right: 12px; bottom: 12px; background: var(--text); color: #FFFFFF; padding: 8px 12px; border-radius: 6px; font-size: 12px; white-space: pre-wrap; }
